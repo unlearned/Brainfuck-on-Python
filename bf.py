@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import re
 from brainfuck import Brainfuck
 
 
@@ -18,13 +19,14 @@ if __name__ == '__main__':
     f = open(argvs[1], 'r')
     lines = f.readlines()
 
-    script = ''
+    context = Brainfuck()
     for line in lines:
-        script += line
-        
-    fuck = Brainfuck()
-    fuck.readScript(script)
-    fuck.exe()
+        if re.match(r'^#!', line):
+            continue
+
+        context.readScript(line)
+
+    context.exe()
 
     print ""
     quit()

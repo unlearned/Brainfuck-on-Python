@@ -1,0 +1,22 @@
+YOU CAN USE PRONGRAMING LANGUAGE CALLED
+       BRAIN F*UCK
+ON        PYTHON
+
+Check your computer installed python.
+If that's installed, it's OK to start.
+
+$ chmod 755 bf.py
+$ ./bf.py helloworld.bf
+
+OR:
+
+$ chmod 755 helloworld.bf
+$ ./helloworld.bf
+
+You get response from computer
+
+Hello, world!
+
+
+enjoy
+

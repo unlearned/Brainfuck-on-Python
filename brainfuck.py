@@ -10,14 +10,17 @@ class Brainfuck(object):
     pointer = []
     position = 0
 
-    
-    def readScript(self, strings):
+
+    def __init__(self):
         self.actions = ''
         self.action_pos = 0
         self.position = 0
         self.pointer = [0]
         
-        self.actions = strings
+
+
+    def readScript(self, strings):
+        self.actions += strings
         return self
 
 
@@ -41,6 +44,12 @@ class Brainfuck(object):
                 self.jumpToClose()
             elif ']' == act:
                 self.jumpToOpen()
+            elif ' ' == act:
+                pass
+            elif '\n' == act:
+               by pass
+            else:
+                raise SyntaxError(self.action_pos)
 
             self.action_pos += 1
 
